@@ -1,0 +1,30 @@
+plugins {
+    id 'application'
+    id "com.github.johnrengelman.shadow" version "6.1.0"
+}
+apply plugin : "java"
+
+ext {
+    javaMainClass = 'com.github.kewilleen.qrcodepix.QRCodePix'
+}
+
+application {
+    mainClassName = javaMainClass
+}
+
+group 'com.github.kewilleen.qrcodepix'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven { url "https://jitpack.io" }
+    google()
+}
+
+dependencies {
+    // https://jitpack.io/#kenglxn/QRGen/2.6.0
+    implementation 'com.github.kenglxn.QRGen:javase:2.6.0'
+    // https://mvnrepository.com/artifact/org.projectlombok/lombok
+    compileOnly 'org.projectlombok:lombok:1.18.22'
+    annotationProcessor 'org.projectlombok:lombok:1.18.22'
+}
